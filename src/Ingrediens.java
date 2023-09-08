@@ -1,6 +1,9 @@
 public class Ingrediens {
 
+    //Oprindelig antal personer: 4
+
     // attributter
+
     private String ingrediens;
     private double mængde;
     private String enhed;
@@ -12,7 +15,8 @@ public class Ingrediens {
     private int antal;
     private int antalIngredienser = 7;
 
-    //konsturktøre
+
+    //konsturktør
 
     public Ingrediens(String ingrediens, double mængde, String enhed, double kcal) {
         this.ingrediens = ingrediens;
@@ -65,6 +69,7 @@ public class Ingrediens {
         this.antal = antal;
     }
 
+
     //metode
 
     public double beregnMængde() {
@@ -79,11 +84,16 @@ public class Ingrediens {
         return kcal * antal / oprindeligAntalPersoner;
     }
 
+
     public String toString() {
         String print = "";
-        print = ingrediens + ": " + beregnMængde() + " " + enhed + " " + beregnKcal() + " " + "kcal";
+        print = ingrediens + ": " + beregnMængde() + " " + enhed + " " +
+                String.format("%.0f", beregnKcal()) + " " + "kcal";
         return print;
     }
+    //String.format(-argument-, værdi(float,double,osv.))
+    //% = nummer
+    // .xf hvor x er det antal decimaler man vil have
 
 
 }

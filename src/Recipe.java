@@ -6,6 +6,8 @@ public class Recipe {
     private int antalPersonner;
     private Ingrediens[] opskrift;
     private String navn;
+    private final double kj = 4.2;
+
 
     //Konstruktør
     public Recipe(String navn, int antalPersonner) {
@@ -35,6 +37,12 @@ public class Recipe {
         return totalKcal;
     }
 
+    public double getKJ() {
+        return kj;
+    }
+
+
+    //set metode
 
     public void setAntal(int antalPersoner) {
         this.antalPersonner = antalPersoner;
@@ -69,6 +77,14 @@ public class Recipe {
 
     public double regnGnsKcal() {
         return totalKcal / opskrift.length;
+    }
+
+    public double regnKcaltilKJ() {
+        return totalKcal * kj;
+    }
+
+    public double regnGnsKJ() {
+        return totalKcal * kj / opskrift.length;
     }
 
 }
